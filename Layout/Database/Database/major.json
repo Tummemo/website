@@ -1,0 +1,45 @@
+[
+    {   "MAJOR" : "CIVIL",
+        "NAME":"CIVIL ENGINEERING",
+        "id" : 0
+    },
+    {
+        "MAJOR":"ARCHI",
+        "NAME":"ARCHITECTURE",
+        "id" : 1
+    },
+    {   "MAJOR" : "EP",
+        "NAME":"ELECTRICAL POWER ENGINEERING",
+        "id" : 2
+        
+    },
+    {   "MAJOR" : "EC",
+        "NAME":"ELECTRONICS ENGINEERING",
+        "id" : 3
+        
+    },
+    {   "MAJOR" : "MP",
+        "NAME":"MECHANICAL POWER ENGINEERING",
+        "id" : 4
+        
+    },
+    
+    {
+        "MAJOR" : "IT",
+        "NAME":"INFORMATION TECHNOLOGY",
+        "id" : 5
+        
+    },
+    {   "MAJOR" : "MC",
+        "NAME":"MACHATRONIC ENGINEERING",
+        "id" : 6
+        
+    },
+    {
+        "MAJOR" : null,
+        "NAME" : null,
+        "id" : null
+    }
+    
+    
+]
