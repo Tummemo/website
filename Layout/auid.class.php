@@ -113,38 +113,20 @@ $json_str = json_encode($json,JSON_PRETTY_PRINT);
          $dir = $_GET["dir"];
          $data_retrieve = file_get_contents($dir);
          $data_retrieve_arr = json_decode($data_retrieve);
-        // print_r($_POST);
-       //  print_r($dir);
-       //  print_r($data_retrieve_arr);
-       //  print_r(count($_POST));
-         //print_r(json_encode($_POST,JSON_PRETTY_PRINT));
         $data_retrieve_qty = count($data_retrieve_arr);
         $_POST_qty = count($_POST) - 1;
-        $temp_arr = array();
-        //for($i = 0; $i <= $_POST_qty; $i ++) {
-            //$temp_arr[$i] = $_POST[$i];
-        //}//for
-        
-        //Temp obj class ဟိုးအောက်မှာ
-        //$temp = new Temp();
-        //obj သုံးမရပါ
-       
+        $temp_arr = array();     
             $count = 0;
         foreach($_POST as $K => $V){
             $temp_arr[$K] = $V;
-            $count += 1; 
-            
+            $count += 1;             
             if($count == $_POST_qty){
 $temp_arr["id"] = $data_retrieve_qty;
                 break;
             }
             
-            }
-           
-        
-      
-       
-       $data_retrieve_arr[$data_retrieve_qty] = $temp_arr;
+         }
+     $data_retrieve_arr[$data_retrieve_qty] = $temp_arr;
 
 $temp_str = json_encode($data_retrieve_arr,JSON_PRETTY_PRINT);
 /* data inserting */
@@ -159,82 +141,120 @@ file_put_contents($dir,$temp_str);
      }//func
      
      
-     public static function if_form_miss_field(){
+     public static function if_form_miss_field(){ ?>
         
-        /* ရုပ်ထွက်သာ ရေးရန်လိုသည် လုပ်ဆောင်ချက် ဟူ၍ redirect link ပြန်ထည့်ရန်သာ */ 
-     }//func
+        <h1> ရုပ်ထွက်သာ ရေးရန်လိုသည် လုပ်ဆောင်ချက် ဟူ၍ redirect link ပြန်ထည့်ရန်သာ </h1>
+    <?php }//func
                     
         
-        public static function alter(){
-            
-            
-            echo "<center>";
+        public static function alter(){            
+             echo "<center>";
              echo "table id = ";
              echo $_GET["id_table"];
              $id_table = $_GET["id_table"];
-             echo "<br>";
-             echo "HELLO ALTER";
-            //echo "data id = "; 
-            //echo $_GET["id"];
-            //$id_data = $_GET["id"];
-            /* data id ဖမ်းဖို့ မလိုဘူး ဘယ်အတန်း ဘယ် rowမှာ နှိပ်နှိပ် table ကိုပဲ index ထောက်မှာ */ 
-             echo "<br>";
-             echo "option type = ";
-             echo $_GET["option"];
              $Directory_arr = scandir(Json_table::$Database);  
 $Directory_str = json_encode($Directory_arr,JSON_PRETTY_PRINT); 
-              echo "<br>";
-              echo "<br>";
-              $json_file_name = $Directory_arr[$id_table];
-            // echo $json_file_name;
-             echo "<br>";
-             //print_r($Directory_arr); 
-         /* if(property_exists(obj,property)){
-              
-          }; */ 
-          
-   /* foreach($Directory_arr as $DK => $DV){
-        echo "<br>";
-        if($json_file_name == $DV ){
-            echo $DV;
-        }//if
-    }//foreach */
-    
+              $json_file_name = $Directory_arr[$id_table];   
     $Directory_path = Json_table::$Database."/".$json_file_name;
      //echo $Directory_path;
 $table_data_retrieve = file_get_contents($Directory_path);
 $table_data_retrieve_arr = json_decode($table_data_retrieve);
              //print_r($table_data_retrieve_arr);
      $table_data_retrieve_arr_qty = count($table_data_retrieve_arr);
+    $json_bn =  basename($json_file_name,".json");
+    $json_tn = $json_bn.".table";
      ?> 
      <center>
-        <form>
+     <h1><?php echo $json_tn ; ?></h1>
+        <form action="alter.php?table_id=<?php echo $id_table; ?>" method="post">
             <table>
 <?php
+
+ $counter = 1; 
      foreach($table_data_retrieve_arr[0] as $tk => $tv ){ 
+    
+     if($tk !== "id"){
     echo "<tr>";
     echo "<td>";
     echo "<label>".$tk."</label>";
     echo "</td><td>";
-    echo "<input type='text' value='".$tv."'>";
-    echo "</td></tr>";
-    }//foreach
-     //$table_data_retrieve_arr[0] 
-             
-             
-        }//func alt
-        
-        
-        public static function alter_form(){
-             ?> 
+    echo "Column ".$counter;
+    echo "</td></tr>"; 
+    $counter += 1;
+    } //if
+    }//foreach    
+     for($i = 0; $i < 1 ; $i ++ ){ ?>          
+<tr>
+  <td>
+     New Column Name
+  </td>
+  <td>
+     <input type="text" name=<?php echo $i; ?> > 
+  </td>
+ </tr>
+    <?php  
+     }//for
+       ?> 
+       </tr>
+       <tr>
+       <td colspan="2">
+       <input type="submit" name="alter_isset" value="ADD COLUMN"> 
+       </td>
+       <tr>
             </table>
         </form>
      </center>
-        
+      <?php                
+        }//func alt       
+             public static function alter_isset(){        if(isset($_POST["alter_isset"])){
+                echo "hello alter";
+                echo "<br>";
+       $table_id = $_GET["table_id"];
+                echo $table_id;
+$Directory_arr = scandir(Json_table::$Database);  
+$Directory_str = json_encode($Directory_arr,JSON_PRETTY_PRINT); 
+              $json_file_name = $Directory_arr[$table_id];   
+    $Directory_path = Json_table::$Database."/".$json_file_name;
+            echo "<br>";
+            echo $Directory_path;
+            echo "<br>";
+            print_r($_GET);
+            echo "<br>";
+            echo "<br>";
+           // print_r(json_encode($_POST));
+            //print_r($_POST);
+            //to get col name
+              
+              $data_retrieve = file_get_contents($Directory_path);
+              $data_retrieve_arr = json_decode($data_retrieve);
+        $data_retrieve_qty =  count($data_retrieve_arr) - 1 ;
+        $counter = 0;
+        $cp = count($_POST) -1 ;
+        $temp = array();
+        foreach($_POST as $k => $v){
             
-       <?php 
+            if($_POST[$k] !== null){
+                for($i = 0; $i <= $data_retrieve_qty; $i ++){
+       $data_retrieve_arr[$i]->$v = $k;
+       }
+            }
+             $counter += 1; 
+            if($counter == $cp){
+                break;
+            }
+           
+            
+        }//foreach
        
-       }//func
+      
+       $encode = json_encode($data_retrieve_arr,JSON_PRETTY_PRINT);
+       file_put_contents($encode,$Directory_path);
+       
+       
+       
+            }//if
+        }//func
+        
         
         
         
