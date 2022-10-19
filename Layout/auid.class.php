@@ -247,9 +247,19 @@ $Directory_str = json_encode($Directory_arr,JSON_PRETTY_PRINT);
         }//foreach
        
       
-       $encode = json_encode($data_retrieve_arr,JSON_PRETTY_PRINT);
-       file_put_contents($encode,$Directory_path);
+       $encode = json_encode($data_retrieve_arr);
+       $strcode = strval($encode);
+       /* main point */
+      
+       file_put_contents($Directory_path,$strcode);
+      /* $testget = file_get_contents($Directory_path);
+       $dec = json_decode($testget);
+       print_r($dec); */
+       ?>
+       <br><br><br><center>
+ <a href="admin.php"> You are successful  Alter table  </a></center>
        
+       <?php
        
        
             }//if
