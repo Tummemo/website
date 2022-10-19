@@ -1,0 +1,255 @@
+body {
+    background-color:lightgreen;
+    text-color:green;
+    
+}
+.insert_cancel{
+    background-color:darkcyan;
+    color:cyan;
+.insert_confirm{
+    width:100%;
+    color:cyan;
+    background-color:blue;
+} 
+}
+.table_creator_and_form_for_has_data{
+    margin-right:auto;
+    margin-left:auto;   
+    margin-top:10px;
+}
+.table_name_show{
+    color:green;
+    text-shadow: 2px 2px 10px #FFFEFF;
+}
+select{
+    background-color:lightgreen;
+    color:green;
+}
+h1 .table_has_no_data{
+    clor:green;
+}
+table{
+    background-color:green;
+    color:lightgreen;
+    width:auto;
+}
+
+th{ 
+    color:white;
+    
+}
+td,th{
+    border:solid 1px white;
+    padding:10px;
+    width:auto;
+}
+input[type = "text"], input[type = "number"], input[type = "password"]{
+    background-color:cyan;
+}
+.user_table_h1{
+    margin-bottom:10px;
+    color:green;
+    width:auto;
+}
+
+.update_table_h1{
+    color:steelblue;
+}
+
+.json_table{
+    height:auto;
+    width:auto;
+    margin-top:5px;
+    border:solid 1px olive;
+}
+.json_table_div{
+    width:auto;
+    height:200px;
+    display:solid;
+    overflow:scroll;
+}
+
+.json_table_thead {
+    inset-block-start: 0;
+    position:sticky;
+    
+}
+tfoot{
+    inset-block-end: 0;
+    position:sticky;
+    background-color:green;
+    color:lightgreen;
+}
+.json_table_th{
+    background-color:green;
+    width:auto;
+    
+    
+}
+.json_table_td{
+    background-color:lightgreen;
+    color:green;
+    
+}
+
+
+
+.json_table_h1{
+    color:green;
+}
+.json_table_td_up{
+    color:white;
+    background-color:steelblue;
+     text-align:center;
+}
+.json_table_td_del{
+    color:white;
+    text-decoration:none;
+    background-color:hotpink;
+     text-align:center;
+}
+.json_table_td_alt{
+    color:chololate;
+    text-decoration:none;
+    background-color:orange;
+    text-align:center;
+}
+
+.json_table_td_cre{
+    background-color:grey;
+    color:white;
+    text-align:center;
+}
+
+.json_table_td_up_a{
+    text-decoration:none;
+    color:white;
+}
+.json_table_td_cre_a{
+    text-decoration:none;
+    color:white;
+}
+
+.table_create_div{
+    width:auto;
+    height:auto;
+    position:absolute;
+    background-color:steelblue;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5%;
+    display:inline-block;
+}
+.container{
+    width:100%;
+}
+.table_update_div{
+    width:50%;
+    height:30%;
+    position:relative;
+    background-color:olive;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5%;
+    
+    
+    }
+ .drop_confirm{
+     color:white;
+     background-color:blue;
+     width:auto;
+     padding:5px;
+     border-color:cyan;
+     margin-left:4px;
+     
+ }
+  .drop_cancel{
+     color:cyan;
+     width:auto;
+     padding:3px;
+     display:solid 2px cyan;
+     border:solid 2px cyan;
+     background-color:steelblue;
+     text-decoration:none;
+     
+     }
+     
+ .table_delete_div{
+    width:50%;
+    height:auto;
+    position:relative;
+    background-color:hotpink;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5%;
+    text-align:center;
+    color:white;
+    padding:20px;
+    border-radius:2%;
+    border:solid 4px cyan;
+}
+.transprent_td{
+    width:relative;
+    background-color:olive;
+    opacity:0.5;
+}
+
+.json_table_submit{
+    width:100%;
+    height:100%;
+    background-color:darkcyan;
+    color:white;
+}
+
+.json_table_submit_update{
+    background-color:darkcyan;
+    color:white;
+}
+
+
+.create_table_form{
+    background-color:grey;
+    margin-right:auto;
+    margin-left:auto;
+    margin-top:10px;
+}
+.update_table_form{
+    background-color:steelblue;
+    margin-right:auto;
+    margin-left:auto;
+    margin-top:10px;
+}
+.alert_link{
+    text-decoration:none;
+    text-align:center;
+    color:white;
+    background-color:hotpink;
+    padding:20px;
+    border: 1px solid white;
+    box-shadow: 5px 10px 8px 10px darkred;
+    
+}
+.alert_box{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    padding:20px;}
+
+.success_link{
+    text-decoration:none;
+    text-align:right;
+    color:white;
+    background-color:cyan;
+    padding:80px;
+    border: 1px solid white;
+    box-shadow: 5px 10px 8px 10px darkred;
+    
+}
+    
+.success_box{
+    margin-top:40%;
+}
+
+span{
+    font-size:40px;
+}
