@@ -227,7 +227,7 @@ $Directory_str = json_encode($Directory_arr,JSON_PRETTY_PRINT);
               
               $data_retrieve = file_get_contents($Directory_path);
               $data_retrieve_arr = json_decode($data_retrieve);
-        $data_retrieve_qty =  count($data_retrieve_arr) - 1 ;
+        $data_retrieve_qty =  count($data_retrieve_arr) -1;
         $counter = 0;
         $cp = count($_POST) -1 ;
         $temp = array();
@@ -235,7 +235,13 @@ $Directory_str = json_encode($Directory_arr,JSON_PRETTY_PRINT);
             
             if($_POST[$k] !== null){
                 for($i = 0; $i <= $data_retrieve_qty; $i ++){
-       $data_retrieve_arr[$i]->$v = $k;
+    
+        
+        $data_retrieve_arr[$i]->$v = $k;
+     
+       
+     
+ 
        }
             }
              $counter += 1; 
@@ -250,18 +256,18 @@ $Directory_str = json_encode($Directory_arr,JSON_PRETTY_PRINT);
        $encode = json_encode($data_retrieve_arr);
        $strcode = strval($encode);
        /* main point */
+       
       
        file_put_contents($Directory_path,$strcode);
       /* $testget = file_get_contents($Directory_path);
        $dec = json_decode($testget);
        print_r($dec); */
+       print_r($data_retrieve_arr[0]);
        ?>
        <br><br><br><center>
  <a href="admin.php"> You are successful  Alter table  </a></center>
        
        <?php
-       
-       
             }//if
         }//func
         
