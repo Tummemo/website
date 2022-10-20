@@ -10,8 +10,9 @@ class User_table{
            // echo json_encode($user_arr,JSON_PRETTY_PRINT);
            
  ?> <center>
-     <h1 class="user_table_h1"><?php echo $title; ?></h1>
+     <div class="json_table_div">
        <table class="user_table"> 
+     
            <thead class="user_table_thead">
                  <tr> 
 <?php          
@@ -46,6 +47,7 @@ class User_table{
             }//fe_out 
 ?>   
     </table>
+    </div>
    </center>                  
 <?php            
             
