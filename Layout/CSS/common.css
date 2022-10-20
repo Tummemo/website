@@ -1,8 +1,93 @@
 body {
-    background-color:lightgreen;
+    background-color:lightblue;
     text-color:green;
+    srcoll:none;
+}
+a{
+    text-decoration:none;
+    color:mediumslateblue;
+    background-color:mediumslateblue;
+}
+a:link {
+  color: cyan;
+}
+
+
+a:visited {
+  color: green;
+}
+
+
+a:hover {
+  color: hotpink;
+}
+
+
+a:active {
+  color: blue;
+}
+a:session{
+    width:100;
+    height:100;
     
 }
+h1{
+    text-align:center;
+    padding:10px;
+}
+#dogerblue{
+    margin-top:5%;
+    width:100%;
+    height:100%;
+    background-color:dogerblue;
+    display:solid;
+    color:mediumslateblue;
+}
+#coral{
+    margin-top:5%;
+    width:100%;
+    height:100%;
+    background-color:coral;
+    display:solid;
+    color:mediumslateblue;
+}
+#firebrick{
+    margin-top:5%;
+    width:100%;
+    height:100%;
+    background-color:lightcoral;
+    display:solid;
+    color:mediumslateblue;
+}
+#black{
+    margin-top:5%;
+    width:100%;
+    height:100%;
+    background-color:lightcyan;
+    display:solid;
+    color:mediumslateblue;
+}
+
+#lightgreen{
+    margin-top:5%;
+    width:100%;
+    height:100%;
+    background-color:black;
+    display:solid;
+    color:mediumslateblue;
+}
+#moccasin{
+    margin-top:5%;
+    width:100%;
+    height:100%;
+    background-color:white;
+    display:solid;
+    color:mediumslateblue;
+}
+
+
+
+
 .insert_cancel{
     background-color:darkcyan;
     color:cyan;
@@ -22,16 +107,33 @@ body {
     text-shadow: 2px 2px 10px #FFFEFF;
 }
 select{
-    background-color:lightgreen;
-    color:green;
+    background-color:slateblue;
+    color:lightgreen;
 }
 h1 .table_has_no_data{
     clor:green;
 }
 table{
-    background-color:green;
+    background-color:mediumslateblue;
     color:lightgreen;
     width:auto;
+    border-radius:1%;
+    margin-top:30%;
+}
+
+.user_table{
+    height:100px;
+    overflow:scroll;
+    color:white;
+    display:solid;
+    border-color:white;
+}
+
+input[type = submit]{
+    background-color:cyan;
+    color:mediumslateblue;
+    border:none;
+    width:50%;
 }
 
 th{ 
@@ -39,63 +141,71 @@ th{
     
 }
 td,th{
-    border:solid 1px white;
+    border:none;
     padding:10px;
     width:auto;
 }
 input[type = "text"], input[type = "number"], input[type = "password"]{
-    background-color:cyan;
+    background-color:black;
+    border-radius:7%;
+    border-color:cyan;
 }
 .user_table_h1{
     margin-bottom:10px;
-    color:green;
+    color:mediumslateblue;
     width:auto;
+    margin-bottom:0;
 }
 
 .update_table_h1{
     color:steelblue;
 }
 
-.json_table{
+.json_table, .user_table{
     height:auto;
     width:auto;
     margin-top:5px;
     border:solid 1px olive;
 }
+
 .json_table_div{
     width:auto;
     height:200px;
     display:solid;
     overflow:scroll;
+    margin-top:20%;
 }
 
-.json_table_thead {
+.json_table_thead , .user_table_thead {
     inset-block-start: 0;
     position:sticky;
     
 }
+.user_table_thead{
+    background-color:mediumslateblue;
+}
 tfoot{
     inset-block-end: 0;
     position:sticky;
-    background-color:green;
+    background-color:mediumslateblue;
     color:lightgreen;
 }
 .json_table_th{
-    background-color:green;
+    background-color:mediumslateblue;
     width:auto;
     
     
 }
 .json_table_td{
-    background-color:lightgreen;
-    color:green;
+    background-color:cyan;
+    color:mediumslateblue;
     
 }
 
 
 
 .json_table_h1{
-    color:green;
+    color:mediumslateblue;
 }
 .json_table_td_up{
     color:white;
@@ -253,3 +363,23 @@ tfoot{
 span{
     font-size:40px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
