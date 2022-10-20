@@ -16,8 +16,8 @@ session_start();   ?>
 
 
 </style>
-</head><body>   
-
+</head> 
+<body>  
 <?php     
 
    $file = file_get_contents("Database/user.json");
@@ -51,9 +51,9 @@ session_start();   ?>
        if(self::$val > 0 ){
                   
               /* page show */ 
-              
-              Studentpage::page();
               Studentpage::opt();
+              
+              
               
               }//if_user_valid 
               else{
