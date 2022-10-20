@@ -1,80 +1,101 @@
 <?php
+include("table_creator.class.php");
 
-
-class Studentpage{
-    
-   public static function page(){ ?> 
-    <div class="table">
- <a href="student.php?option=opt"> OPTION </a>
-  </div>
-<?php
- 
- }//func
-   
-        public static function opt(){
-       if(isset($_GET["option"])){ 
-       ?>
-<div class="table">    
-<a href="student.php?option=course" target="_blank" class="table">Course</a>       
- </div>
-           
-       <?php 
-       self::usc();
-       }
-       
-    } 
-       
-       public static function usc(){
-       if($_GET["option"] == "course"){ 
-       $user_str = file_get_contents("Database/user.json");
-       $user_arr = json_decode($user_str);
-       foreach($user_arr as $k => $v){
-        if($_SESSION["username"] == $v->username && $_SESSION["password"] == $v->password){
-            $id = $v->id ;
-        }
-          
-       }
-      // echo $id; //id ရယူ 
-       
-       //student ဖြစ်တဲ့ အတွက် student.json ထဲ index သွားထောက်ရုံပဲ။ မထောက်ခင် json အရင်ထုတ်ဖို့လိုတယ်။ array ပြောင်းဖို့လည်းလိုတယ်။ 
-       
-       $stu_str = file_get_contents("Database/student.json");
-       $stu_arr = json_decode($stu_str);
-       
-       foreach($stu_arr as $k => $v){
-           if($v->id == $id){
-               echo "<br>";
-               echo "Student data" ;
-               echo "<br><br>";
-               echo "name = ".$v->name;
-               echo "<br>";
-               $year = $v->year;
-               echo "year = ".$year;
-               
-               echo "<br>";
-               $semester = $v->semester;
-               echo "semester = ".$semester; 
-               echo "<br>";
-               $major = $v->major;
-               echo "major = ".$major;
-               echo "<br>";
-               
-           } break;
-       }
-       
-       
-       $cur_str = file_get_contents("Database/course.json");
-       $cur_arr = json_decode($cur_str);
-       
-       
-           
-           
-       }//
+    class Studentpage{
+        public static $opt;
+        public static $menu = 0;
+        public static $page = null;
+        public static $css = array(
+        "white",
+        "black",
+        "moccasin",
+        "firebrick",
+        "black",
+        "blue"
+        );
+        
+       public static function opt(){ 
+      
   
-    }
+          if(@$_GET["option"] == null){
+          self::default_(0);
+          }//if
+          elseif($_GET["option"] == 0){ 
+          self::default_(1);
+          }//elseif 
+          elseif($_GET["option"] == 1){
+          self::default_(2);
+          }
+          elseif($_GET["option"] == 2){
+          self::default_(3);
+          }
+          elseif($_GET["option"] == 3){
+          self::default_(null);
+          }
+          
+       
+      }//func option
+     
+      
+       public static function default_($default_){
+           self::$menu = $default_;
+           if(self::$menu == null){
+               self::$menu = 0;
+           }
+      ?>
+<session id="<?php echo self::$opt; ?>">
+
+<a href="student.php?option=<?php echo self::$menu; ?>"> 
+<h1>
+Page <?php self::$menu += 1; echo self::$menu ; ?> 
+</h1> 
+</a> 
+<div id=<?php echo self::$css[self::$menu]; ?>>
+<?php self::page($_SESSION); ?>
+</div>
+</session>    
+      <?php } //func default_ 
     
 
-  }//class
+        public static function page($arr){
+            if(self::$menu == 1){
+      Table_creator::table_creator($arr);          
+                }//1st page 1
+            }//page
+            
+            
+       /*  public static function table_creator($arr){ 
+         ?>    
+   <table>
+     <thead><?php self::thead_($arr); ?></thead>
+     <tbody><?php self::tdata_($arr); ?></tbody>
+   </table>
+        <?php }//table_
+        
+        public static function thead_($arrl){ 
+              echo "<tr>";
+          foreach($arr as $k => $v){
+              echo "<th>";
+              echo $k;
+              echo "</th>";
+              
+          }//foreach
+              echo "</tr>";
+            
+        }//thead_
+        
+        public static function tdata_($arr){
+              echo "<tr>";
+            foreach($arr as $k => $v){
+              echo "<td>";
+              echo $v;
+              echo "</td>";
+            }//foreach
+              echo "</tr>";
+        }//tdata_
+        
+        */
+        
+       }//class
 
-
- ?>
+?>
