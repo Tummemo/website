@@ -62,7 +62,7 @@ $put_data = json_encode($user_arr_add,JSON_PRETTY_PRINT);
 @file_put_contents("Layout/Database/user.json",$put_data);
 echo "<center> <h4 style='color:chocolate;'> Login Again , I set admin account </h4><br><br></center>";
         }else{
-             echo "<center> <h4 style='color:olive;'> You Can Go ! </h4></center>";
+             echo "<center> <h4 style='color:mediumslateblue;'> You Can Go ! </h4></center>";
           $username = $_POST["username"];
           $password = $_POST["password"];
           $level = $_POST["level"];
@@ -72,14 +72,14 @@ echo "<center> <h4 style='color:chocolate;'> Login Again , I set admin account <
           
                
                 if($level == "teacher"){
-            echo "<center><form action='Layout/teacher.php'><input type='submit' style='background-color:green; color:white; padding:10px;'value=' You Can Go Student Home Page >>' name='teacher'></form></center> ";
+            echo "<center><form action='Layout/teacher.php'><input type='submit' style='background-color:mediumslateblue; color:white; padding:10px;'value=' You Can Go Student Home Page >>' name='teacher'></form></center> ";
         }//teach
                 if($level == "student"){
-                    echo "<center><form action='Layout/student.php'><input type='submit' style='background-color:green; color:white; padding:10px;'value=' You Can Go Student Home Page >>' name='student'></form></center> ";
+                    echo "<center><form action='Layout/student.php'><input type='submit' style='background-color:mediumslateblue; color:white; padding:10px;'value=' You Can Go Student Home Page >>' name='student'></form></center> ";
             
         }//stu
                 if($level == "admin"){
-                    echo "<center><form action='Layout/admin.php'><input type='submit' style='background-color:green; color:white; padding:10px;'value=' You Can Go Admin Box >>' name='teacher'></form></center> ";
+                    echo "<center><form action='Layout/admin.php'><input type='submit' style='background-color:mediumslateblue; color:white; padding:10px;'value=' You Can Go Admin Box >>' name='teacher'></form></center> ";
              
              } //adm
         
@@ -89,7 +89,7 @@ echo "<center> <h4 style='color:chocolate;'> Login Again , I set admin account <
        
               else{
                     
-                   echo "<center> <h4 style='color:red;'> You must set all fields ! ' </h4><br><br></center>";
+                   echo "<center> <h4 style='color:darkred;'> You must set all fields ! ' </h4><br><br></center>";
                    
                 }
             
