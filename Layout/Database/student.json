@@ -1,0 +1,25 @@
+[
+
+    {
+        "name" : "a",
+        "year" : "1BE",
+        "semester": "2",
+        "major" : "IT",
+        "id" : 0
+    },
+    {
+        "name" : "b",
+        "year" : "2BE",
+        "semester" : "2",
+        "major" : "IT",
+        "id" : 1
+    },
+    {
+        "name" : "c",
+        "year" : "3BE",
+        "semester" : "1",
+        "major" : "IT",
+        "id" : 2
+    }
+
+]
