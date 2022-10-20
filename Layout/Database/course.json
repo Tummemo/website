@@ -1,0 +1,26 @@
+[
+
+{
+    "course":"myanmar sar",
+    "code":"m1101",
+    "id":0
+},
+{
+    "course" : "english",
+    "code" : "em2202",
+    "id":1
+},
+{
+    "course" : "web developement",
+    "code" : "it32035",
+    "id" : 2
+},
+{
+    "course" : "database",
+    "code" : "it32016",
+    "id" : 3 
+}
+
+
+
+]
