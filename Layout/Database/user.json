@@ -1,8 +1,44 @@
 [
     {
-        "username": "echo",
+        "username": "tumdy",
         "password": "1000",
         "level": "admin",
         "id": 0
+    },
+    {
+        "username" :"a",
+        "password" : "2000",
+        "level":"student",
+        "id": 0
+    },
+    {
+        "username" : "b",
+        "password" : "3000",
+        "level" : "student",
+        "id" : 1
+    },
+    {
+        "username" : "c",
+        "password" : "4000",
+        "level" : "student",
+        "id" : 2
+    },
+    {
+        "username" : "a",
+        "password" : "5000",
+        "level" : "teacher",
+        "id" : 0
+    },
+    {
+        "username" : "b",
+        "password" : "6000",
+        "level" : "teacher",
+        "id" : 1
+    },
+    {
+        "username" : "c",
+        "password" : "7000",
+        "level" : "teacher",
+        "id" : 2
     }
 ]
